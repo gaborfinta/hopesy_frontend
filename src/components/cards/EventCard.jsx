@@ -1,20 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Tooltip from '@material-ui/core/Tooltip';
+import InfoIcon from '@material-ui/icons/Info';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
+import AccessibleIcon from '@material-ui/icons/Accessible';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,22 +37,21 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  button: {
+    position:'relative',
+  }
 }));
 
 export default function EventCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   return (
     <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            FL
           </Avatar>
         }
         action={
@@ -74,44 +73,26 @@ export default function EventCard() {
           Kaja Kaja éhes vagyok
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
+      <CardActions >
+        <Tooltip title="Disabled person">
+          <IconButton aria-label="add to favorites">
+            <AccessibleIcon color="primary"/>
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Family with young children">
+          <IconButton aria-label="share">
+            <ChildFriendlyIcon color="secondary"/>
+          </IconButton>
+        </Tooltip> 
+        <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        startIcon={<InfoIcon />}
         >
-          <ExpandMoreIcon />
-        </IconButton>
+          Show more
+        </Button>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Kéne kaja
-          </Typography>
-          <Typography paragraph>
-            
-          </Typography>
-            <ul>
-                <li>Kenyér</li>
-                <li>BARACK</li>
-                <li>óVSZER</li>
-                <li>Malacka</li>
-            </ul>
-          <Typography>
-            1000 Forint kéne
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 }
