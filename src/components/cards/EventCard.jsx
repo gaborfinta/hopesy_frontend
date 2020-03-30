@@ -16,6 +16,8 @@ import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import AccessibleIcon from '@material-ui/icons/Accessible';
 import Button from '@material-ui/core/Button';
 
+import EventModal from '../display/EventModal';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -84,15 +86,9 @@ export default function EventCard() {
             <ChildFriendlyIcon color="secondary"/>
           </IconButton>
         </Tooltip> 
-        <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        startIcon={<InfoIcon />}
-        >
-          Show more
-        </Button>
+        <EventModal />
       </CardActions>
+      
     </Card>
   );
 }
