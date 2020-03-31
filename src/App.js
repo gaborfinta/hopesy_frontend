@@ -14,7 +14,7 @@ import CharityEvents from './pages/CharityEvents';
 
 function App() {
   
-  // Ennek majd máshonnan kell dinamikusan jönnie
+  // Dummy data for testing
   const [user, setUser] = useState({
     firstName: 'Levente',
     lastName: 'Fodor',

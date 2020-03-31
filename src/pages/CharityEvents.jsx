@@ -25,25 +25,8 @@ export default function CharityEvents() {
                 <Grid item xs={6} sm={3}>
                     <EventCard />
                 </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <CreateNewEventCard />
-                </Grid>
             </Grid>
+            
         </div>
     );
 };
