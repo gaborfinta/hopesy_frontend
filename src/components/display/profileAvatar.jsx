@@ -9,12 +9,21 @@ const useStyles = makeStyles(theme => ({
     '& > *': {
       margin: theme.spacing(1),
     },
+    small: {
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+    },
+    large: {
+      width: theme.spacing(10),
+      height: theme.spacing(10),
+    },
   },
 }));
 
 export default function ProfileAvatar(props) {
   const classes = useStyles();
   const userData = props.userData;
+  const size = props.size === "large" ? classes.large : classes.small;
 
   return (
     <div className={classes.root}>
@@ -24,7 +33,11 @@ export default function ProfileAvatar(props) {
             vertical: 'bottom',
             horizontal: 'right',
             }}>
-                <Avatar alt="Profile picture" src={userData.profilePictureUrl} />    
+                <Avatar 
+                  alt="Profile picture" 
+                  src={userData.profilePictureUrl} 
+                  className={size}
+                  />    
             </Badge>
         </Badge> 
     </div>

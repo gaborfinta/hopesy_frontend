@@ -11,6 +11,8 @@ import FAQs from './pages/FAQs';
 import Donaters from './pages/Donaters';
 import CharityEvents from './pages/CharityEvents';
 
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 function App() {
   
@@ -18,6 +20,7 @@ function App() {
   const [user, setUser] = useState({
     firstName: 'Levente',
     lastName: 'Fodor',
+    location: 'Budapest',
     isValidated: true,
     Age: 24,
     memberShip: 'Gold',
@@ -25,10 +28,19 @@ function App() {
   })
 
   // const [user, setUser] = useState({})
+  const themeDark = createMuiTheme({
+    palette: {
+      background: {
+        default: "#e4f0e2"
+      }
+    }
+  });
 
   return (
     <div>
       {!_.isEmpty(user) ? 
+      <MuiThemeProvider theme={themeDark}>
+      <CssBaseline />
         <UserContext.Provider value={user}>
           <Router history={history}>
             <Route path="/" component={NavBar} />
@@ -37,9 +49,9 @@ function App() {
             <Route path="/faqs" component={FAQs} />
             <Route path="/donaters" component={Donaters} />
             <Route path="/events" component={CharityEvents} />
-
           </Router>
         </UserContext.Provider>
+        </MuiThemeProvider>
         :
         <p>Welkome bicsiz</p>
       }

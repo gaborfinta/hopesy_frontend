@@ -87,8 +87,8 @@ export default function EventModal() {
                     <Typography variant="body2" color="textSecondary" component="p">
                         Körte
                     </Typography>
-                </li>
-                <li>
+                </li> 
+                <li>  
                     <Typography variant="body2" color="textSecondary" component="p">
                         Barack
                     </Typography>
@@ -105,7 +105,7 @@ export default function EventModal() {
                 of total 2000 Ft
             </Typography>
             <Typography component="h5" variant="h5">
-                Location MoneyProgress
+                Location
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
                 Budapest
