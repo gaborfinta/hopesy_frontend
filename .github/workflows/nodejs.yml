@@ -27,10 +27,16 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     # - run: npm test
-    - name: Deploy to Firebase
+    - name: Deploy to Firebase production
+      if: contains(github.ref, "master")
       uses: w9jds/firebase-action@master
       with: 
-        args: deploy --only hosting
+        args: deploy --only hosting:production
+    - name: Deploy to Firebase staging
+      if: contains(github.ref, "develop")
+      uses: w9jds/firebase-action@master
+      with: 
+        args: deploy --only hosting:staging
       env:
         CI: true
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
