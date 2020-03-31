@@ -1,5 +1,14 @@
 {
-  "projects": {
-    "default": "hopesy-16904"
+  "targets": {
+    "hopesy-16904": {
+      "hosting": {
+        "staging": [
+          "hopesy-staging"
+        ],
+        "production": [
+          "hopesy-16904"
+        ]
+      }
+    }
   }
 }
