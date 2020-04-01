@@ -106,7 +106,7 @@ export default function CreateNewEventModal() {
                                 >
                                 Attach Images
                                 <input
-                                    type="files"
+                                    type="file"
                                     style={{ display: "none" }}
                                 />
                             </Button>
