@@ -3,8 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
-import GroupIcon from '@material-ui/icons/Group';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles({
   root: {
@@ -36,15 +35,15 @@ export default function AllCharityEventsCard(props) {
             className={classes.cardHeader}
             title={
                 <Typography gutterBottom variant="overline" component="h2">
-                   active users
+                   Number of charity events
                 </Typography>
              }
              avatar={
-                <GroupIcon />
+                <FavoriteIcon />
               }
         />
         <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
-                   911
+                   5
         </Typography>
     </Card>
   );

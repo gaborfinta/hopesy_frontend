@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles({
   root: {
@@ -19,11 +19,7 @@ const useStyles = makeStyles({
   },
   moneySection: {
     paddingLeft: 15
-  },
-  avatar: {
-    background: '#66BB6A',
-
-  },
+  }
 });
 
 export default function AllDonationsCard(props) {
@@ -39,9 +35,7 @@ export default function AllDonationsCard(props) {
                 </Typography>
              }
              avatar={
-                <Avatar aria-label="moneySpent" className={classes.avatar}>
-                  $
-                </Avatar>
+                <AttachMoneyIcon />
               }
         />
         <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
