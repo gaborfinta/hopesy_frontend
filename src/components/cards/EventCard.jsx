@@ -61,7 +61,7 @@ export default function EventCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Bevásárlás egyedülálló anya"
+        title="Bevásárlás"
         subheader="November 12 2020"
         subheader="November 12 2020"
       />
