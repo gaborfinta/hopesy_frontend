@@ -1,17 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-    button: {
-        "&:hover": {
-            color: '#3ff1aa'
-          },
-    },
-  }));
-
+import RegisterAndLoginForm from '../components/forms/RegisterAndLoginForm';
 
 function WelcomePage() {
-    const classes = useStyles();
 
   return (
     <div>
@@ -32,7 +22,7 @@ function WelcomePage() {
                 marginLeft: 'auto',
                 fontSize: '20px'
             }}>
-              <ul>
+              {/* <ul>
                 <li 
                     style={{
                         display: 'inline-block',
@@ -52,7 +42,8 @@ function WelcomePage() {
                 >
                     BELÉPÉS
                 </li>
-              </ul>
+              </ul> */}
+              <RegisterAndLoginForm />
             </div>
         </header>  
       </section>

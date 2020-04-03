@@ -4,6 +4,7 @@ import AllUsersCard from '../components/cards/AllUsersCard';
 import AllCharityEventsCard from '../components/cards/AllCharityEventsCard';
 import Grid from '@material-ui/core/Grid';
 import WelcomeCard from '../components/cards/WelcomeCard';
+import RegisterAndLoginForm from '../components/forms/RegisterAndLoginForm';
 
 export default function About() {
     
@@ -21,6 +22,7 @@ export default function About() {
                 </Grid>
                 <Grid item xs={12}>
                     <WelcomeCard />
+                    {/* <RegisterAndLoginForm /> */}
                 </Grid>
             </Grid> 
         </div>
