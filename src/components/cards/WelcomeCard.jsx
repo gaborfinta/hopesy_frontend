@@ -4,13 +4,17 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
+import WelcomeImage from '../../img/welcome.png';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '91%',
-    maxHeight: 200,
+    maxWidth: 900,
+    maxHeight: 300,
     margin: '15px',
-    background: '#71B771',
+    // background: '#F0E076',
+    background: '#ECE33B',
     color: "white",
   },
   cardHeader: {
@@ -22,7 +26,6 @@ const useStyles = makeStyles({
   },
   avatar: {
     background: '#66BB6A',
-
   },
 });
 
@@ -31,20 +34,34 @@ export default function WelcomeCard(props) {
 
   return (
     <Card className={classes.root} raised>
-         <CardHeader
-            className={classes.cardHeader}
-            title={
-                <Typography gutterBottom variant="overline" component="h2">
-                   Adománygyűjtés
-                </Typography>
-             }
-             avatar={
-                <FavoriteIcon />
-              }
-        />
-        <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
-                   5
-        </Typography>
+        <CardContent>
+            <Grid container spacing={3}>
+                <Grid item xs={6}>
+                    <Typography variant="h4" component="h2">
+                        <strong>Üdv újra itt Levente!</strong>
+                    </Typography>
+                    <br />
+                    <Typography variant="body2" component="p">
+                        <strong>
+                            Mi nagyra értékeljük, hogy a közösségünk tagja vagy, 
+                            és hozzájárulsz egy 
+                            <span style={{ color: "#71B771" }}>összetartóbb</span>, 
+                            <span style={{ color: "#FEAB67" }}> boldogabb</span> világ kialakitásához.
+                        </strong>
+                    </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                   <img 
+                        src={WelcomeImage} 
+                        style={{
+                            maxHeight: '100%',
+                            maxWidth: '100%',
+                            width: 'auto'
+                        }}
+                        />
+                </Grid>
+            </Grid>
+      </CardContent>
     </Card>
   );
 }
