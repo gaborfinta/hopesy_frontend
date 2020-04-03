@@ -1,6 +1,18 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+        "&:hover": {
+            color: '#3ff1aa'
+          },
+    },
+  }));
+
 
 function WelcomePage() {
+    const classes = useStyles();
+
   return (
     <div>
       <section
@@ -24,15 +36,19 @@ function WelcomePage() {
                 <li 
                     style={{
                         display: 'inline-block',
-                        margin: '0 20px'
+                        margin: '0 20px',
+                        cursor: 'pointer',
                     }}
+                    className={classes.button}
                 >
                     REGISZTRÁCIÓ
                 </li>
                 <li style={{
                         display: 'inline-block',
-                        margin: '0 20px'
+                        margin: '0 20px',
+                        cursor: 'pointer',
                     }}
+                    className={classes.button}
                 >
                     BELÉPÉS
                 </li>
@@ -59,9 +75,7 @@ function WelcomePage() {
             }}
         >
           <span 
-            style={{
-                borderBottom: '2px solid #3ff1aa'
-              }}
+            style={{borderBottom: '2px solid #3ff1aa',}}
           >hopesy.io
           </span> <br/> ahol a közösségi felelősségvállalás <br/>
           új értelmet nyer
