@@ -3,6 +3,7 @@ import AllDonationsCard from '../components/cards/AllDonationsCard';
 import AllUsersCard from '../components/cards/AllUsersCard';
 import AllCharityEventsCard from '../components/cards/AllCharityEventsCard';
 import Grid from '@material-ui/core/Grid';
+import WelcomeCard from '../components/cards/WelcomeCard';
 
 export default function About() {
     
@@ -17,6 +18,9 @@ export default function About() {
                 </Grid>
                 <Grid item xs={4}>
                     <AllCharityEventsCard />
+                </Grid>
+                <Grid item xs={12}>
+                    <WelcomeCard />
                 </Grid>
             </Grid> 
         </div>
