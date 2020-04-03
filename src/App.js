@@ -10,6 +10,7 @@ import About from './pages/About';
 import FAQs from './pages/FAQs';
 import Donaters from './pages/Donaters';
 import CharityEvents from './pages/CharityEvents';
+import WelcomePage from './pages/WelcomePage';
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -53,7 +54,7 @@ function App() {
         </UserContext.Provider>
         </MuiThemeProvider>
         :
-        <p>Welkome bicsiz</p>
+        <WelcomePage />
       }
     </div>
       
