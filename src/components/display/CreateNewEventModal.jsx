@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     }, 
     uploadButton: {
         maxHeight: "200px",
-        maxWidth: "150px"
+        maxWidth: "250px"
     }
   }));
 
@@ -73,7 +73,7 @@ export default function CreateNewEventModal() {
         onClose={handleClose}
         aria-labelledby="max-width-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">{"Create new charity event"}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{"Új adománygyűjtés létrehozása"}</DialogTitle>
         <DialogContent>
         <div>
         <Card className={classes.root} variant="outlined">
@@ -81,13 +81,13 @@ export default function CreateNewEventModal() {
                 <form className={classes.form} noValidate autoComplete="off">
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6} >
-                            <TextField id="eventName" fullWidth required label="Name of the charity event" variant="outlined" />
+                            <TextField id="eventName" fullWidth required label="Gyűjtés neve" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={6} >
                             <TextField id="requestedMoney" 
                                 fullWidth 
                                 required 
-                                label="Requested money" 
+                                label="Számlán szereplő összeg" 
                                 variant="outlined"
                                 InputProps={{
                                     startAdornment: <InputAdornment position="start">Ft</InputAdornment>,
@@ -104,7 +104,7 @@ export default function CreateNewEventModal() {
                                 variant="contained"
                                 component="label"
                                 >
-                                Attach Images
+                                Kép feltöltése
                                 <input
                                     type="file"
                                     style={{ display: "none" }}
@@ -113,13 +113,13 @@ export default function CreateNewEventModal() {
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <RadioGroup aria-label="gender" name="gender1">
-                                <FormControlLabel value="female" control={<Radio />} label="Set my profile public in this event" />
+                                <FormControlLabel value="female" control={<Radio />} label="Profilom megjeleítése a gyűjtésnél" />
                             </RadioGroup>
                         </Grid>
                         <Grid item xs={12} sm={12} >
                             <TextField
                                 id="outlined-multiline-static"
-                                label="Description"
+                                label="Leírás"
                                 multiline
                                 fullWidth
                                 rows="4"
@@ -131,14 +131,14 @@ export default function CreateNewEventModal() {
                 </form>
             </CardContent>
     <CardActions>
-        <Button color="secondary" variant="contained" size="small"> Create event</Button>
+        <Button color="secondary" variant="contained" size="small">Létrehozás</Button>
     </CardActions>
     </Card>
         </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" autoFocus>
-            Close
+            Bezárás
           </Button>
         </DialogActions>
       </Dialog>

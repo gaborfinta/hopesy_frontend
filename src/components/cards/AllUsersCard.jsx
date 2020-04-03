@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     maxWidth: 300,
     maxHeight: 200,
     margin: '15px',
-    background: '#FF6F00',
+    background: '#FEAB67',
     color: "white",
   },
   cardHeader: {
@@ -35,7 +35,7 @@ export default function AllUsersCard(props) {
             className={classes.cardHeader}
             title={
                 <Typography gutterBottom variant="overline" component="h2">
-                   active users
+                   aktív felhasználó
                 </Typography>
              }
              avatar={

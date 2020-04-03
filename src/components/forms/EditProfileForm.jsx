@@ -28,27 +28,27 @@ export default function EditProfilePageForm() {
         <Card className={classes.root} variant="outlined">
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    Edit profile details
+                    Adatlap szerkesztése
                 </Typography>  
                 <form className={classes.form} noValidate autoComplete="off">
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6} >
-                            <TextField id="firstName" fullWidth required label="First name" variant="outlined" />
+                            <TextField id="firstName" fullWidth required label="Vezetéknév" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={6} >
-                            <TextField id="lastName" fullWidth required label="Last name" variant="outlined" />
+                            <TextField id="lastName" fullWidth required label="Keresztnév" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField id="locatin" fullWidth required label="Location" variant="outlined" />
+                            <TextField id="locatin" fullWidth required label="Település" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField type="email" id="email" fullWidth required label="Email Address" variant="outlined" />
+                            <TextField type="email" id="email" fullWidth required label="Email cím" variant="outlined" />
                         </Grid>
                     </Grid>
                 </form>
             </CardContent>
       <CardActions>
-        <Button color="primary" variant="contained" size="small"> Save details</Button>
+        <Button color="primary" variant="contained" size="small">Mentés</Button>
       </CardActions>
     </Card>
     </div>

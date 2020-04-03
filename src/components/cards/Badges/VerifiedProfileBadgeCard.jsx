@@ -21,7 +21,7 @@ export default function VerifiedProfileBadgeCard(props) {
   return (
     <Card className={classes.root} raised>
         <Typography variant="h5" align="center" component="h2">
-            Verified user ✓
+            Ellenőrzött profil ✓
         </Typography>  
     </Card>
   );

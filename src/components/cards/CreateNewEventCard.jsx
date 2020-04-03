@@ -28,7 +28,7 @@ export default function CreateNewEventCard() {
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Create new event
+          Új adománygyűjtés
         </Typography>
         <CreateNewEventModal />
       </CardContent>

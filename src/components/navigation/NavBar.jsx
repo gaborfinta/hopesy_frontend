@@ -59,6 +59,11 @@ const useStyles = makeStyles((theme) => ({
     '&:focus, &:hover, &:visited, &:link, &:active': {
       textDecoration: 'none'
   }
+  },
+  appBar: {
+    // backgroundColor: "#9778A9"
+    backgroundColor: "#7D60A4"
+
   }
 }));
 
@@ -102,12 +107,12 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>
         <NavLink to="/profile" className={classes.link}>
-          Profile
+          Adatlap
         </NavLink>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>
         <NavLink to="/logout" className={classes.link}>
-            Log out
+            Kijelentkezés
         </NavLink>
       </MenuItem>
     </Menu>
@@ -126,38 +131,38 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <NavLink to="/about" className={classes.link}>
-          <p>About</p>
+          <p>kampány</p>
         </NavLink>
       </MenuItem>
 
       <MenuItem>
         <NavLink to="/events" className={classes.link}>
-          <p>Charity events</p>
+          <p>Adománygyűjtés</p>
         </NavLink>
       </MenuItem>
 
       <MenuItem>
         <NavLink to="/donaters" className={classes.link}>
-          <p>Donaters</p> 
+          <p>Adakozók</p> 
         </NavLink>
       </MenuItem>
 
       <MenuItem>
         <NavLink to="/faqs" className={classes.link}>
-        <p>FAQs</p>
+        <p>GY.I.K</p>
         </NavLink>
       </MenuItem>
 
       <MenuItem onClick={handleProfileMenuOpen}>
           <ProfileAvatar userData={userData}/>
-          <p>Profile</p>
+          <p>Adatlap</p>
       </MenuItem>
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
             <NavLink to="/" className={classes.link}>
               <img src="./images/logo3.png" width="100" alt="logo" /> 
@@ -167,25 +172,25 @@ export default function PrimarySearchAppBar() {
             
             <Button color="inherit">
                 <NavLink to="/about" className={classes.link}>
-                  about
+                  kampány
                 </NavLink>
             </Button>
             
             <Button color="inherit">
               <NavLink to="/events" className={classes.link}>
-                charity events
+                Adománygyűjtés
               </NavLink>
             </Button>
             
             <Button color="inherit">
               <NavLink to="/donaters" className={classes.link}>
-                Donaters
+              Adakozók
               </NavLink>
             </Button>
             
             <Button color="inherit">
               <NavLink to="/faqs" className={classes.link}>
-                FAQs
+                GY.I.K
               </NavLink>
             </Button>
             

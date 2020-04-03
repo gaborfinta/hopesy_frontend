@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     maxWidth: 300,
     maxHeight: 200,
     margin: '15px',
-    background: '#651FFF',
+    background: '#8074D9',
     color: "white",
   },
   cardHeader: {
@@ -31,7 +31,7 @@ export default function AllDonationsCard(props) {
             className={classes.cardHeader}
             title={
                 <Typography gutterBottom variant="overline" component="h2">
-                   totals of donations
+                Összes adomány
                 </Typography>
              }
              avatar={
