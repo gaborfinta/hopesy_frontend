@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     large: {
       width: theme.spacing(10),
       height: theme.spacing(10),
-    },
+    }
   },
 }));
 
@@ -29,12 +29,12 @@ export default function ProfileAvatar(props) {
     <div className={classes.root}>
        {/* <Badge badgeContent={"✓"} invisible={!userData.isValidated} color="error"> */}
             <Badge
-            badgeContent={"gold"}
-            color="primary"
+            badgeContent={0}
+            color="none"
             overlap="rectangle"
             anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
+              vertical: 'bottom',
+              horizontal: 'right',
             }}>
                 <Avatar 
                   alt="Profile picture" 

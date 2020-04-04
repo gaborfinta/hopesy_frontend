@@ -24,7 +24,6 @@ export default function Profile() {
             <Grid item xs={4}>
                 <ProfileCard userData={userData} />
                 <VerifiedProfileBadgeCard />
-                
             </Grid>
             <Grid item xs={8}>
                 <EditProfilePageForm />
