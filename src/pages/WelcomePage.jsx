@@ -22,27 +22,6 @@ function WelcomePage() {
                 marginLeft: 'auto',
                 fontSize: '20px'
             }}>
-              {/* <ul>
-                <li 
-                    style={{
-                        display: 'inline-block',
-                        margin: '0 20px',
-                        cursor: 'pointer',
-                    }}
-                    className={classes.button}
-                >
-                    REGISZTRÁCIÓ
-                </li>
-                <li style={{
-                        display: 'inline-block',
-                        margin: '0 20px',
-                        cursor: 'pointer',
-                    }}
-                    className={classes.button}
-                >
-                    BELÉPÉS
-                </li>
-              </ul> */}
               <RegisterAndLoginForm />
             </div>
         </header>  

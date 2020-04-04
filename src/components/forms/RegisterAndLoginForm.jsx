@@ -1,68 +1,4 @@
-// import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import BottomNavigation from '@material-ui/core/BottomNavigation';
-// import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-// import LockOpenIcon from '@material-ui/icons/LockOpen';
-// import VpnKeyIcon from '@material-ui/icons/VpnKey';
-// import Button from '@material-ui/core/Button';
-// import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import Typography from '@material-ui/core/Typography';
-
-// const useStyles = makeStyles({
-//   root: {
-//     width: 500,
-//   },
-// });
-
-
-
-// export default function RegisterAndLoginForm() {
-//   const classes = useStyles();
-//   const [value, setValue] = React.useState(0);
-
-//     function generateCardContent(value) {
-//         return (
-//         <CardContent>
-//             <Typography className={classes.title} color="textSecondary" gutterBottom>
-//                 { value == 0 ? "Regisztráció" : "Belépés"}
-//             </Typography>  
-//         </CardContent>
-//         )
-//     }
-
-
-//   return (
-//       <div>
-        
-//         <Card className={classes.root} variant="outlined">
-//             <BottomNavigation
-//                 value={value}
-//                 onChange={(event, newValue) => {
-//                     setValue(newValue);
-//                 }}
-//                 showLabels
-//                 className={classes.root}
-//                 >
-//                 <BottomNavigationAction label="Regisztráció" icon={<VpnKeyIcon />} />
-//                 <BottomNavigationAction label="Belépés" icon={<LockOpenIcon />} />
-//             </BottomNavigation>
-
-//             {generateCardContent(value)}
-//     </Card>
-//       </div>
-       
-//   );
-// }
-
-
-
-
-
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -80,8 +16,8 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import SocialLoginCard from '../cards/SocialLoginCardContainer';
 import LoginImage from '../../img/Login2.png';
+import LoginGoogleCard from '../cards/LoginGoogleCard';
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -108,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
 export default function RegisterAndLoginForm() {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -119,22 +54,6 @@ export default function RegisterAndLoginForm() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  function addButtonNavigation() {
-      return (
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-            >
-            <BottomNavigationAction label="Regisztráció" icon={<VpnKeyIcon />} />
-            <BottomNavigationAction label="Belépés" icon={<LockOpenIcon />} />
-        </BottomNavigation>
-      )
-  }
 
   return (
     <div>
@@ -169,21 +88,10 @@ export default function RegisterAndLoginForm() {
         >
        
         <DialogTitle id="alert-dialog-title">
-            {addButtonNavigation()}
+          Belépés Google fiókkal
         </DialogTitle>
         <DialogContent>
-            <Grid container spacing={3}>
-            <img 
-              src={LoginImage} 
-              style={{
-                  maxHeight: '100%',
-                  maxWidth: '100%',
-                  minHeight: '50%',
-                  minWidth: '50%',
-                  width: 'auto',
-              }} />
-                <SocialLoginCard />
-            </Grid>
+          <LoginGoogleCard />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
