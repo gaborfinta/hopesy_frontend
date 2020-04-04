@@ -125,7 +125,7 @@ export default function EventModal() {
             <Typography component="h5" variant="h5">
                 Adományok jelenlegi állása
             </Typography>
-            <MoneyProgress />
+            <MoneyProgress current={60} total={100} />
             <Typography component="h6" variant="h6">
                 <span
                   style={{

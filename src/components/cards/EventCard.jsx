@@ -77,9 +77,8 @@ export default function EventCard() {
             </CardMedia>
           
         </Grid>
-      
         <Grid item xs={12}>
-          <MoneyProgress />
+          <MoneyProgress current={40} total={100} />
         </Grid>
       </Grid>
     </Card>
