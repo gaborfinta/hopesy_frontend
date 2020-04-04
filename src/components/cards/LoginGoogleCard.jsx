@@ -20,11 +20,11 @@ export default function LoginGoogleCard() {
         {
           method: 'post',
           headers: {'Content-Type':'application/json'},
-          body: {
+          body: JSON.stringify({
             name: autenticatedUser.displayName,
             id: autenticatedUser.uid,
             profile_pic: autenticatedUser.photoURL
-          }
+          })
         }).then(response => response.json())
         .then(data => console.log(`Data: ${data}`));
     };
