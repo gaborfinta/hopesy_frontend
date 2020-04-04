@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+    - run: unset CI
     - run: npm run build --if-present
     # - run: npm test
     - name: Deploy to Firebase production
@@ -38,4 +39,5 @@ jobs:
       with: 
         args: deploy --only hosting:staging
       env:
+        CI: false
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
