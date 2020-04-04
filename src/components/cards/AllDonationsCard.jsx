@@ -4,13 +4,14 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import { styles } from '../../style';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
+    maxWidth: 250,
     maxHeight: 200,
     margin: '15px',
-    background: '#8074D9',
+    background: styles.secondary,
     color: "white",
   },
   cardHeader: {
@@ -26,7 +27,7 @@ export default function AllDonationsCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
          <CardHeader
             className={classes.cardHeader}
             title={

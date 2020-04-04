@@ -24,8 +24,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MoneyProgress() {
+export default function MoneyProgress(props) {
   const classes = useStyles();
+  const current = props.current;
+  const total = props.total;
+
+  function calculatePercent() {
+    return Math.floor((current / total ) * 100)
+  }
 
   return (
     <div className={classes.root}>
@@ -33,7 +39,7 @@ export default function MoneyProgress() {
         className={classes.margin}
         variant="determinate"
         color="secondary"
-        value={35}
+        value={calculatePercent()}
       />
     </div>
   );

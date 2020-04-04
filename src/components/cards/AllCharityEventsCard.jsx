@@ -4,13 +4,14 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { styles } from '../../style';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
+    maxWidth: 250,
     maxHeight: 200,
     margin: '15px',
-    background: '#71B771',
+    background: styles.inherit,
     color: "white",
   },
   cardHeader: {
@@ -19,18 +20,14 @@ const useStyles = makeStyles({
   },
   moneySection: {
     paddingLeft: 15
-  },
-  avatar: {
-    background: '#66BB6A',
-
-  },
+  }
 });
 
 export default function AllCharityEventsCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
          <CardHeader
             className={classes.cardHeader}
             title={

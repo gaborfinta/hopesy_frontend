@@ -14,6 +14,8 @@ import {  NavLink} from "react-router-dom";
 import ProfileAvatar from "../display/profileAvatar";
 import UserContext from '../../contexts/UserContext';
 
+import { styles } from '../../style';
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -61,9 +63,7 @@ const useStyles = makeStyles((theme) => ({
   }
   },
   appBar: {
-    // backgroundColor: "#9778A9"
-    backgroundColor: "#7D60A4"
-
+    backgroundColor: styles.default
   }
 }));
 
@@ -130,12 +130,6 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <NavLink to="/about" className={classes.link}>
-          <p>kampány</p>
-        </NavLink>
-      </MenuItem>
-
-      <MenuItem>
         <NavLink to="/events" className={classes.link}>
           <p>Adománygyűjtés</p>
         </NavLink>
@@ -149,7 +143,7 @@ export default function PrimarySearchAppBar() {
 
       <MenuItem>
         <NavLink to="/faqs" className={classes.link}>
-        <p>GY.I.K</p>
+        <p>Rólunk</p>
         </NavLink>
       </MenuItem>
 
@@ -164,18 +158,12 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-            <NavLink to="/" className={classes.link}>
+            <NavLink to="/events" className={classes.link}>
               <img src="./images/logo3.png" width="100" alt="logo" /> 
             </NavLink>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            
-            <Button color="inherit">
-                <NavLink to="/about" className={classes.link}>
-                  kampány
-                </NavLink>
-            </Button>
-            
+
             <Button color="inherit">
               <NavLink to="/events" className={classes.link}>
                 Adománygyűjtés
@@ -190,7 +178,7 @@ export default function PrimarySearchAppBar() {
             
             <Button color="inherit">
               <NavLink to="/faqs" className={classes.link}>
-                GY.I.K
+                Rólunk
               </NavLink>
             </Button>
             

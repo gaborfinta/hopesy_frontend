@@ -44,12 +44,15 @@ export default function EditProfilePageForm() {
                         <Grid item xs={12} sm={6}>
                             <TextField type="email" id="email" fullWidth required label="Email cím" variant="outlined" />
                         </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField id="accountNumber" fullWidth required label="Bankszámlaszám" variant="outlined" />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <Button color="primary" variant="contained" size="large">Mentés</Button>
+                        </Grid>
                     </Grid>
                 </form>
             </CardContent>
-      <CardActions>
-        <Button color="primary" variant="contained" size="small">Mentés</Button>
-      </CardActions>
     </Card>
     </div>
   );

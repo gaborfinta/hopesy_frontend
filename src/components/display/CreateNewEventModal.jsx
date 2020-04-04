@@ -3,14 +3,10 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import MoneyProgress from '../sliders/MoneyProgress';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
 import Grid from '@material-ui/core/Grid';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import TextField from '@material-ui/core/TextField';
@@ -95,7 +91,7 @@ export default function CreateNewEventModal() {
                                 />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField id="locatin" fullWidth required label="Location" variant="outlined" />
+                            <TextField id="locatin" fullWidth label="Település" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Button

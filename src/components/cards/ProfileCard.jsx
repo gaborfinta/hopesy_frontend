@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import NumberOfThanksCard from './Badges/NumberOfThanksCard';
 
 const useStyles = makeStyles({
   root: {
@@ -47,6 +48,7 @@ export default function ProfileCard(props) {
                         Budapest
                     </Typography>
                 </CardContent>
+                <NumberOfThanksCard />
             </Grid>
             <Grid item xs={6}>
             <Avatar 
@@ -54,6 +56,7 @@ export default function ProfileCard(props) {
                 src={props.userData.profilePictureUrl} 
                 className={classes.large}/>
             </Grid>
+            
         </Grid>
             
     
