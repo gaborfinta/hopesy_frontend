@@ -47,13 +47,11 @@ export default function WelcomeCard(props) {
                         <strong>Üdv újra itt Levente!</strong>
                     </Typography>
                     <br />
-                    <Typography variant="body2" component="p" style={{ color: styles.default }}>
-                        <strong>
+                    <Typography variant="body2" component="p">
                             Mi nagyra értékeljük, hogy a közösségünk tagja vagy, 
                             és hozzájárulsz egy 
-                            <span style={{ color: "#88d313" }}> összetartóbb</span>, 
-                            <span style={{ color: "#6e3667" }}> boldogabb</span> világ kialakitásához.
-                        </strong>
+                            összetartóbb, 
+                            boldogabb világ kialakitásához.
                     </Typography>
                 </Grid>
                 <Grid item xs={6}>

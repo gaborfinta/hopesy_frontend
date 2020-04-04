@@ -149,7 +149,7 @@ export default function PrimarySearchAppBar() {
 
       <MenuItem>
         <NavLink to="/faqs" className={classes.link}>
-        <p>GY.I.K</p>
+        <p>Rólunk</p>
         </NavLink>
       </MenuItem>
 
@@ -190,7 +190,7 @@ export default function PrimarySearchAppBar() {
             
             <Button color="inherit">
               <NavLink to="/faqs" className={classes.link}>
-                GY.I.K
+                Rólunk
               </NavLink>
             </Button>
             

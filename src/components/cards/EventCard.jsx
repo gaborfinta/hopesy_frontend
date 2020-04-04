@@ -12,7 +12,9 @@ import ShoppingImage from '../../img/shopping2.png';
 import EventModal from '../display/EventModal';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Button from '@material-ui/core/Button';
-
+import CardActions from '@material-ui/core/CardActions';
+import MoneyProgress from '../sliders/MoneyProgress';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
   },
 }));
 
@@ -42,42 +43,51 @@ export default function EventCard() {
 
   return (
     <Card className={classes.root}>
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            Bevásárlás
-          </Typography>
-          <Typography variant="subtitle1" color="primary">
-            <strong>
-              2000 Ft
-            </strong>
-          </Typography>
-        </CardContent>
-        <div className={classes.controls}>
-        <Button
-          size="small"
-          color="primary"
-          startIcon={<FacebookIcon />}
-          >
-          Megosztás
-        </Button>
-        <EventModal />
-        </div>
-      </div>
-      <CardMedia
-        className={classes.cover}
-      >
-        <img 
-          src={ShoppingImage} 
-          style={{
-              maxHeight: '100%',
-              maxWidth: '100%',
-              minHeight: '50%',
-              minWidth: '50%',
-              width: 'auto',
-          }}
-          />
-      </CardMedia>
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+            <div className={classes.details}>
+            <CardContent className={classes.content}>
+              <Typography component="h5" variant="h5">
+                Bevásárlás
+              </Typography>
+              <Typography variant="subtitle1" color="primary">
+                <strong>
+                  2000 Ft
+                </strong>
+              </Typography>
+              </CardContent>
+              <div className={classes.controls}>
+              <Button
+                size="small"
+                color="primary"
+                startIcon={<FacebookIcon />}
+                />
+              <EventModal />
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={6}>
+            <CardMedia
+              className={classes.cover}
+            >
+              <img 
+                src={ShoppingImage} 
+                style={{
+                    maxHeight: '80%',
+                    maxWidth: '80%',
+                    minHeight: '50%',
+                    minWidth: '50%',
+                    width: 'auto',
+                }}
+                />
+            </CardMedia>
+          
+        </Grid>
+      
+        <Grid item xs={12}>
+          <MoneyProgress />
+        </Grid>
+      </Grid>
     </Card>
   );
 }

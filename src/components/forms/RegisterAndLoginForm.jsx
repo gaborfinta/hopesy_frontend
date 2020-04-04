@@ -81,6 +81,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import SocialLoginCard from '../cards/SocialLoginCardContainer';
+import LoginImage from '../../img/Login2.png';
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -172,6 +173,15 @@ export default function RegisterAndLoginForm() {
         </DialogTitle>
         <DialogContent>
             <Grid container spacing={3}>
+            <img 
+              src={LoginImage} 
+              style={{
+                  maxHeight: '100%',
+                  maxWidth: '100%',
+                  minHeight: '50%',
+                  minWidth: '50%',
+                  width: 'auto',
+              }} />
                 <SocialLoginCard />
             </Grid>
         </DialogContent>

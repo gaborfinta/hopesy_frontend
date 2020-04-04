@@ -118,10 +118,10 @@ export default function EventModal() {
                 src="https://d2h1pu99sxkfvn.cloudfront.net/b0/3498684/256965635_JEBHcinx8j/P0.jpg" 
                 alt="invoice"
                 className={classes.images} />
-                <img 
+                {/* <img 
                 src="https://i2-prod.mirror.co.uk/incoming/article8523557.ece/ALTERNATES/s615/Groceries-in-a-shopping-trolley-move-through-a-food-aisle.jpg" 
                 alt="invoice"
-                className={classes.images} />
+                className={classes.images} /> */}
         </Grid>
         <Grid item xs={12} sm={6}>
             <Typography component="h5" variant="h5">
@@ -131,12 +131,17 @@ export default function EventModal() {
             <Typography component="h6" variant="h6">
                 <span
                   style={{
-                    color: styles.inherit
+                    color: styles.inherit,
+                    float: 'left'
                   }}
                 >
                   345
-                </span> a 2000 Ft-ból
+                </span>
+                <span style={{float: 'right'}}>
+                  a 2000 Ft-ból
+                </span>
             </Typography>
+            <br />
             <Button
                 variant="contained"
                 color="secondary"
@@ -144,7 +149,7 @@ export default function EventModal() {
                 startIcon={<CreditCardIcon />}
                 onClick={handleClickOpenTransfer}
             >
-                Adakozok
+                Segítek
             </Button>
             {openTransfer ? addTransferForm() : null}
             <Typography component="h6" variant="h6">
