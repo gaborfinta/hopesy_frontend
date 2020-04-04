@@ -1,12 +1,12 @@
 import GoogleButton from 'react-google-button'
 import React, { useState, useEffect } from 'react';
 import { signInWithGoogle, auth } from '../../firebase/firebase';
+import Button from '@material-ui/core/Button';
 
 export default function LoginGoogleCard() {
 
     const [idToken, setIdToken] = useState(null);
-    const [uid, setUid] = useState(null);
-  
+
     function signIn() {
       signInWithGoogle()
     }
@@ -14,13 +14,29 @@ export default function LoginGoogleCard() {
     function signOut() {
       auth.signOut()
     }
+
+    function registerData(autenticatedUser) {
+      fetch('https://us-central1-hopesy-16904.cloudfunctions.net/user/',
+        {
+          method: 'post',
+          headers: {'Content-Type':'application/json'},
+          body: {
+            name: autenticatedUser.displayName,
+            id: autenticatedUser.uid,
+            profile_pic: autenticatedUser.photoURL
+          }
+        }).then(response => response.json())
+        .then(data => console.log(`Data: ${data}`));
+    };
+    
   
     useEffect(() => {
       auth.onAuthStateChanged(async nextUser => {
   
         if (auth.currentUser) {
           setIdToken(await auth.currentUser.getIdToken())
-          setUid(auth.currentUser.uid)
+          console.log("RegiszterData megihivoodiik")
+          registerData(auth.currentUser)
         } else {
           setIdToken(null)
         }
@@ -35,6 +51,8 @@ export default function LoginGoogleCard() {
                 label="Belépés Google fiókkal"
                 onClick={signIn}>
             /></GoogleButton>
+            <Button onClick={signOut}>Kilépés</Button>
+
         </div>
     )
 

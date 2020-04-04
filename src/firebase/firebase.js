@@ -23,3 +23,4 @@ const provider = new firebase.auth.GoogleAuthProvider()
 export function signInWithGoogle() {
     auth.signInWithPopup(provider)
 }
+
