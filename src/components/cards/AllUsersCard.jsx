@@ -4,13 +4,14 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import GroupIcon from '@material-ui/icons/Group';
+import { styles } from '../../style';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
     maxHeight: 200,
     margin: '15px',
-    background: '#FEAB67',
+    background: styles.secondary,
     color: "white",
   },
   cardHeader: {

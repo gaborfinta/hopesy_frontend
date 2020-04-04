@@ -14,6 +14,8 @@ import {  NavLink} from "react-router-dom";
 import ProfileAvatar from "../display/profileAvatar";
 import UserContext from '../../contexts/UserContext';
 
+import { styles } from '../../style';
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -61,9 +63,7 @@ const useStyles = makeStyles((theme) => ({
   }
   },
   appBar: {
-    // backgroundColor: "#9778A9"
-    backgroundColor: "#7D60A4"
-
+    backgroundColor: styles.default
   }
 }));
 

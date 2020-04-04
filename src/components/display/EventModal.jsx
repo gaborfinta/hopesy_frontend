@@ -51,7 +51,7 @@ export default function EventModal() {
         color="secondary" 
         className={classes.button}
         onClick={handleClickOpen}>
-        Details
+        Részletek
       </Button>
       <Dialog
         fullScreen={fullScreen}
@@ -60,7 +60,7 @@ export default function EventModal() {
         onClose={handleClose}
         aria-labelledby="max-width-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">{"Egyedülálló anya bevásárlása"}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{"Bevásárlása"}</DialogTitle>
         <DialogContent>
         <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>

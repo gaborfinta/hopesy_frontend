@@ -14,25 +14,26 @@ import WelcomePage from './pages/WelcomePage';
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { styles } from './style';
 
 function App() {
   
   // Dummy data for testing
-  // const [user, setUser] = useState({
-  //   firstName: 'Levente',
-  //   lastName: 'Fodor',
-  //   location: 'Budapest',
-  //   isValidated: true,
-  //   Age: 24,
-  //   memberShip: 'Gold',
-  //   profilePictureUrl: "https://www.evolutionsociety.org/userdata/news_picupload/pic_sid189-0-norm.jpg"
-  // })
+  const [user, setUser] = useState({
+    firstName: 'Levente',
+    lastName: 'Fodor',
+    location: 'Budapest',
+    isValidated: true,
+    Age: 24,
+    memberShip: 'Gold',
+    profilePictureUrl: "https://www.evolutionsociety.org/userdata/news_picupload/pic_sid189-0-norm.jpg"
+  })
 
-  const [user, setUser] = useState({})
+  // const [user, setUser] = useState({})
   const themeDark = createMuiTheme({
     palette: {
       background: {
-        default: "#e4f0e2"
+        default: styles.background
       }
     }
   });

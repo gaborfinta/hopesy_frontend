@@ -7,6 +7,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import WelcomeImage from '../../img/welcome.png';
+import { styles } from '../../style'
 
 const useStyles = makeStyles({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
     maxHeight: 300,
     margin: '15px',
     // background: '#F0E076',
-    background: '#ECE33B',
+    background: styles.welcomecard,
     color: "white",
   },
   cardHeader: {

@@ -72,7 +72,7 @@ export default function EventCard() {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Kaja Kaja éhes vagyok
+          2000 Ft
         </Typography>
       </CardContent>
       <CardActions >
