@@ -2,10 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import CardHeader from '@material-ui/core/CardHeader';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid';
 import WelcomeImage from '../../img/welcome.png';
 import { styles } from '../../style'

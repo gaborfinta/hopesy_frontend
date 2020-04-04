@@ -55,7 +55,7 @@ function WelcomePage() {
             src="./images/basket.png"
             widt="520"
             height="300"
-            alt="leaf-main-image"
+            alt="hopesy-basket"
             style={{
                 marginLeft: '10%'
             }}

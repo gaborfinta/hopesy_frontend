@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
@@ -118,10 +117,6 @@ export default function EventModal() {
                 src="https://d2h1pu99sxkfvn.cloudfront.net/b0/3498684/256965635_JEBHcinx8j/P0.jpg" 
                 alt="invoice"
                 className={classes.images} />
-                {/* <img 
-                src="https://i2-prod.mirror.co.uk/incoming/article8523557.ece/ALTERNATES/s615/Groceries-in-a-shopping-trolley-move-through-a-food-aisle.jpg" 
-                alt="invoice"
-                className={classes.images} /> */}
         </Grid>
         <Grid item xs={12} sm={6}>
             <Typography component="h5" variant="h5">
