@@ -13,7 +13,7 @@ export const styles = {
     primary: "#4484ce",
     secondary: "#233237",
     inherit: '#cd5360',
-    // background: "#efefef",
+    background: "#efefef",
     background: "#d9d9d9",
     welcomecard: '#4484ce'
 };

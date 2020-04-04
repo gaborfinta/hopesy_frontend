@@ -21,7 +21,6 @@ export default function About() {
                 </Grid>
                 <Grid item xs={12}>
                     <WelcomeCard />
-                    {/* <RegisterAndLoginForm /> */}
                 </Grid>
             </Grid> 
         </div>

@@ -8,10 +8,10 @@ import { styles } from '../../style';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
+    maxWidth: 250,
     maxHeight: 200,
     margin: '15px',
-    background: styles.primary,
+    background: styles.secondary,
     color: "white",
   },
   cardHeader: {

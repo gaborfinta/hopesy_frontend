@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import EventCard from '../components/cards/EventCard';
 import CreateNewEventCard from '../components/cards/CreateNewEventCard';
+import WelcomeCard from '../components/cards/WelcomeCard';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,10 +16,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CharityEvents() {
     const classes = useStyles();
+    const [expanded, setExpanded] = React.useState(true);
+
+    const handleExpandClick = () => {
+      setExpanded(!expanded);
+    };
+
 
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
+                {expanded ? 
+                    <Grid item xs={6} sm={6}>
+                        <WelcomeCard handleExpandClick={handleExpandClick}/>
+                    </Grid>
+                    :
+                    null
+                }
                 <Grid item xs={6} sm={3}>
                     <CreateNewEventCard />
                 </Grid>

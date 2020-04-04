@@ -6,11 +6,15 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import WelcomeImage from '../../img/welcome.png';
 import { styles } from '../../style'
+import AllDonationsCard from './AllDonationsCard';
+import AllUsersCard from './AllUsersCard';
+import AllCharityEventCard from './AllCharityEventsCard';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 900,
-    maxHeight: 300,
+    maxHeight: 900,
     margin: '15px',
     background: styles.welcomecard,
     color: "white",
@@ -29,11 +33,6 @@ const useStyles = makeStyles({
 
 export default function WelcomeCard(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <Card className={classes.root} raised variant="outlined">
@@ -50,6 +49,16 @@ export default function WelcomeCard(props) {
                             összetartóbb, 
                             boldogabb világ kialakitásához.
                     </Typography>
+                    <AllDonationsCard />
+                    <AllUsersCard />
+                    <AllCharityEventCard />
+                    <Button 
+                      variant="contained"
+                      style={{backgroundColor: styles.secondary, color: 'white'}}
+                      onClick={(e) => props.handleExpandClick()}
+                      >
+                      Terület elrejtése
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
                    <img 
