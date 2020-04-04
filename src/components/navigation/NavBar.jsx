@@ -158,12 +158,12 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-            <NavLink to="/" className={classes.link}>
+            <NavLink to="/events" className={classes.link}>
               <img src="./images/logo3.png" width="100" alt="logo" /> 
             </NavLink>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            
+
             <Button color="inherit">
               <NavLink to="/events" className={classes.link}>
                 Adománygyűjtés
