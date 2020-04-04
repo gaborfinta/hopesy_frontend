@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid';
 import WelcomeImage from '../../img/welcome.png';
 import { styles } from '../../style'
@@ -31,22 +32,27 @@ const useStyles = makeStyles({
 
 export default function WelcomeCard(props) {
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <Card className={classes.root} raised variant="outlined">
-        <CardContent>
+          <CardContent>
             <Grid container spacing={3}>
                 <Grid item xs={6}>
                     <Typography variant="h4" component="h2">
                         <strong>Üdv újra itt Levente!</strong>
                     </Typography>
                     <br />
-                    <Typography variant="body2" component="p">
+                    <Typography variant="body2" component="p" style={{ color: styles.default }}>
                         <strong>
                             Mi nagyra értékeljük, hogy a közösségünk tagja vagy, 
                             és hozzájárulsz egy 
-                            <span style={{ color: "#71B771" }}>összetartóbb</span>, 
-                            <span style={{ color: "#FEAB67" }}> boldogabb</span> világ kialakitásához.
+                            <span style={{ color: "#88d313" }}> összetartóbb</span>, 
+                            <span style={{ color: "#6e3667" }}> boldogabb</span> világ kialakitásához.
                         </strong>
                     </Typography>
                 </Grid>

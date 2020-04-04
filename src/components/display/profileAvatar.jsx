@@ -27,8 +27,11 @@ export default function ProfileAvatar(props) {
 
   return (
     <div className={classes.root}>
-       <Badge badgeContent={"✓"} invisible={!userData.isValidated} color="error">
-            <Badge badgeContent={"gold"} color="error" overlap="rectangle"
+       {/* <Badge badgeContent={"✓"} invisible={!userData.isValidated} color="error"> */}
+            <Badge
+            badgeContent={"gold"}
+            color="primary"
+            overlap="rectangle"
             anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'right',
@@ -39,7 +42,7 @@ export default function ProfileAvatar(props) {
                   className={size}
                   />    
             </Badge>
-        </Badge> 
+        {/* </Badge>  */}
     </div>
   );
 }
