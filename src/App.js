@@ -6,7 +6,6 @@ import history from "./history";
 import UserContext from './contexts/UserContext';
 import NavBar from './components/navigation/NavBar';
 import Profie from './pages/Profile';
-import About from './pages/About';
 import FAQs from './pages/FAQs';
 import Donaters from './pages/Donaters';
 import CharityEvents from './pages/CharityEvents';
@@ -47,7 +46,6 @@ function App() {
           <Router history={history}>
             <Route path="/" component={NavBar} />
             <Route path="/profile" component={Profie} />
-            <Route path="/about" component={About} />
             <Route path="/faqs" component={FAQs} />
             <Route path="/donaters" component={Donaters} />
             <Route path="/events" component={CharityEvents} />

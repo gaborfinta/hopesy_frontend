@@ -130,12 +130,6 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <NavLink to="/about" className={classes.link}>
-          <p>kampány</p>
-        </NavLink>
-      </MenuItem>
-
-      <MenuItem>
         <NavLink to="/events" className={classes.link}>
           <p>Adománygyűjtés</p>
         </NavLink>
@@ -169,12 +163,6 @@ export default function PrimarySearchAppBar() {
             </NavLink>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            
-            <Button color="inherit">
-                <NavLink to="/about" className={classes.link}>
-                  kampány
-                </NavLink>
-            </Button>
             
             <Button color="inherit">
               <NavLink to="/events" className={classes.link}>
