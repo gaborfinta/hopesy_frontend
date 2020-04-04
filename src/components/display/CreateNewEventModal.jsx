@@ -91,7 +91,7 @@ export default function CreateNewEventModal() {
                                 />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField id="locatin" fullWidth required label="Location" variant="outlined" />
+                            <TextField id="locatin" fullWidth label="Település" variant="outlined" />
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             <Button

@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import UserContext from '../contexts/UserContext';
 import ProfileCard from '../components/cards/ProfileCard';
 import VerifiedProfileBadgeCard from '../components/cards/Badges/VerifiedProfileBadgeCard';
-import MembershipProfileBadgeCard from '../components/cards/Badges/MembershipProfileBadgeCard';
 import EditProfilePageForm from '../components/forms/EditProfileForm';
 import Grid from '@material-ui/core/Grid';
 
@@ -25,9 +24,7 @@ export default function Profile() {
             <Grid item xs={4}>
                 <ProfileCard userData={userData} />
                 <VerifiedProfileBadgeCard />
-                <MembershipProfileBadgeCard memberShip="Gold" />
-                <MembershipProfileBadgeCard memberShip="Silver" />
-                <MembershipProfileBadgeCard memberShip="Bronze" />
+                
             </Grid>
             <Grid item xs={8}>
                 <EditProfilePageForm />
