@@ -66,6 +66,9 @@ export default function EventModal() {
                   <TextField id="accountName" fullWidth required label="Kártyán szereplő név" variant="outlined" />
               </Grid>
               <Grid item xs={12} sm={6}>
+                  <TextField id="amount" fullWidth required label="Összeg" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
                   <TextField id="cvc" type="password" fullWidth required label="CVC Kód" variant="outlined" />
               </Grid>
               <Grid item xs={12} sm={6}>
