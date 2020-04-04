@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     maxWidth: 900,
     maxHeight: 300,
     margin: '15px',
-    // background: '#F0E076',
     background: styles.welcomecard,
     color: "white",
   },
@@ -34,7 +33,7 @@ export default function WelcomeCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
         <CardContent>
             <Grid container spacing={3}>
                 <Grid item xs={6}>

@@ -27,7 +27,7 @@ export default function AllDonationsCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
          <CardHeader
             className={classes.cardHeader}
             title={

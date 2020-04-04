@@ -20,18 +20,14 @@ const useStyles = makeStyles({
   },
   moneySection: {
     paddingLeft: 15
-  },
-  avatar: {
-    background: '#66BB6A',
-
-  },
+  }
 });
 
 export default function AllCharityEventsCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
          <CardHeader
             className={classes.cardHeader}
             title={

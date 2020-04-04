@@ -31,7 +31,7 @@ export default function AllUsersCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} raised>
+    <Card className={classes.root} raised variant="outlined">
          <CardHeader
             className={classes.cardHeader}
             title={
