@@ -12,7 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import MoneyProgress from '../sliders/MoneyProgress';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import Grid from '@material-ui/core/Grid';
-
+import { styles } from '../../style';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function EventModal() {
   const [open, setOpen] = React.useState(false);
+  const [openTransfer, setOpenTransfer] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const classes = useStyles();
@@ -44,6 +46,51 @@ export default function EventModal() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleClickOpenTransfer = () => {
+    setOpenTransfer(true);
+  };
+
+  const handleCloseTransfer = () => {
+    setOpenTransfer(false);
+  };
+
+  function addTransferForm(){
+    return (
+      <div>
+        <form className={classes.form} noValidate autoComplete="off">
+          <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} >
+                  <TextField id="cardNumber" fullWidth required label="Bankkártya szám" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6} >
+                  <TextField id="accountName" fullWidth required label="Kártyán szereplő név" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                  <TextField id="cvc" type="password" fullWidth required label="CVC Kód" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.donateButton}
+                  >
+                      Jóváhagy
+                  </Button>
+
+                  <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleCloseTransfer}
+                  >
+                      Mégse
+                  </Button>
+              </Grid>
+          </Grid>
+        </form>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -61,7 +108,9 @@ export default function EventModal() {
         onClose={handleClose}
         aria-labelledby="max-width-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">{"Bevásárlása"}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">
+          Bevásárlás
+        </DialogTitle>
         <DialogContent>
         <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -76,61 +125,47 @@ export default function EventModal() {
         </Grid>
         <Grid item xs={12} sm={6}>
             <Typography component="h5" variant="h5">
-                Product list
-            </Typography>
-            <ul>
-                <li>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Alma
-                    </Typography>
-                </li>
-                <li>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Körte
-                    </Typography>
-                </li> 
-                <li>  
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Barack
-                    </Typography>
-                </li>
-            </ul>
-            <Typography component="h5" variant="h5">
-                Progress of donations
+                Adományok jelenlegi állása
             </Typography>
             <MoneyProgress />
-            <Typography component="h6" variant="h6" color="secondary">
-                345 Ft
-            </Typography>
-            <Typography component="h6" variant="h6" >
-                of total 2000 Ft
-            </Typography>
-            <Typography component="h5" variant="h5">
-                Location
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-                Budapest
-            </Typography>
-            <Typography component="h5" variant="h5">
-                Description
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <Typography component="h6" variant="h6">
+                <span
+                  style={{
+                    color: styles.inherit
+                  }}
+                >
+                  345
+                </span> a 2000 Ft-ból
             </Typography>
             <Button
                 variant="contained"
                 color="secondary"
                 className={classes.donateButton}
                 startIcon={<CreditCardIcon />}
+                onClick={handleClickOpenTransfer}
             >
-                Donate
+                Adakozok
             </Button>
+            {openTransfer ? addTransferForm() : null}
+            <Typography component="h6" variant="h6">
+                Település
+            </Typography>
+            <Typography variant="body1" color="textSecondary" component="p">
+                Budapest
+            </Typography>
+            <Typography component="h6" variant="h6">
+                Leírás
+            </Typography>
+            <Typography variant="body1" color="textSecondary" component="p">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </Typography>
+            
         </Grid>
       </Grid>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" autoFocus>
-            Close
+            Bezárás
           </Button>
         </DialogActions>
       </Dialog>
