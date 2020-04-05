@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { signInWithGoogle, auth } from '../../firebase/firebase';
 import Button from '@material-ui/core/Button';
 
+import { registerUser, getUserById } from '../api_helpers/user';
+
+import examples from '../api_helpers/example_calls';
+
 export default function LoginGoogleCard() {
 
     const [idToken, setIdToken] = useState(null);
@@ -15,18 +19,33 @@ export default function LoginGoogleCard() {
       auth.signOut()
     }
 
-    function registerData(autenticatedUser) {
-      fetch('https://us-central1-hopesy-16904.cloudfunctions.net/user/',
-        {
-          method: 'post',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({
-            name: autenticatedUser.displayName,
-            id: autenticatedUser.uid,
-            profile_pic: autenticatedUser.photoURL
-          })
-        }).then(response => response.json())
-        .then(data => console.log(`Data: ${data}`));
+    async function registerData(autenticatedUser) {
+      // Check if user already exists in User Service
+      let user = await getUserById(autenticatedUser.uid);
+      if (user !== undefined) {
+        return user;
+      }
+
+      // User does not exist yet, register
+      try {
+        await registerUser(
+          autenticatedUser.uid,
+          autenticatedUser.displayName,
+          autenticatedUser.photoURL
+        );
+      } catch (error) {
+        if (error.message === "400") {
+          // User already exists, something weird has happened
+        }
+        else {
+          throw error;
+        }
+      }
+
+      // Get details of newly registered user from the user service
+      user = await getUserById(autenticatedUser.uid);
+      return user;
+
     };
     
   
@@ -35,8 +54,10 @@ export default function LoginGoogleCard() {
   
         if (auth.currentUser) {
           setIdToken(await auth.currentUser.getIdToken())
-          console.log("RegiszterData megihivoodiik")
-          registerData(auth.currentUser)
+          // TODO delete examples line :)
+          await examples();
+          let user = await registerData(auth.currentUser)
+          // user contains the user service details of the logged in user
         } else {
           setIdToken(null)
         }
