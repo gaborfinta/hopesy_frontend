@@ -125,7 +125,7 @@ async function examples() {
         console.log(donations);
     }
 
-    if (true) {
+    if (false) {
         const donation_id = "k3fTr2EBHSRIeNVs1JSb";
         let donation = await getDonationById(donation_id);
         console.log(donation);
