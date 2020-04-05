@@ -14,7 +14,7 @@ async function registerUser(uid, name, profile_pic) {
         "profile_pic": profile_pic
     };
 
-    let resp = await fetch('https://us-central1-hopesy-16904.cloudfunctions.net/user/', {
+    let resp = await fetch(BASE_URL, {
         method: 'post',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(userFields)
@@ -31,7 +31,7 @@ async function registerUser(uid, name, profile_pic) {
 async function getAllUsers() {
     let resp = await fetch(BASE_URL, { method: 'get' });
     if (resp.status === 200) {
-        let data = resp.json();
+        let data = await resp.json();
         return data;
     }
     throw new Error("Something bad has happened");

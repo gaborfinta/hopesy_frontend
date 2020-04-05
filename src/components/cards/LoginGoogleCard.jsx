@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { signInWithGoogle, auth } from '../../firebase/firebase';
 import Button from '@material-ui/core/Button';
 
-import { registerUser } from '../api_helpers/user';
+import { registerUser, getUserById } from '../api_helpers/user';
 
 import examples from '../api_helpers/example_calls';
 
@@ -20,20 +20,32 @@ export default function LoginGoogleCard() {
     }
 
     async function registerData(autenticatedUser) {
+      // Check if user already exists in User Service
+      let user = await getUserById(autenticatedUser.uid);
+      if (user !== undefined) {
+        return user;
+      }
+
+      // User does not exist yet, register
       try {
-        let uid = await registerUser(
+        await registerUser(
           autenticatedUser.uid,
           autenticatedUser.displayName,
           autenticatedUser.photoURL
         );
       } catch (error) {
         if (error.message === "400") {
-          // User already exists
+          // User already exists, something weird has happened
         }
         else {
           throw error;
         }
       }
+
+      // Get details of newly registered user from the user service
+      user = await getUserById(autenticatedUser.uid);
+      return user;
+
     };
     
   
@@ -42,9 +54,10 @@ export default function LoginGoogleCard() {
   
         if (auth.currentUser) {
           setIdToken(await auth.currentUser.getIdToken())
-          console.log("RegiszterData megihivoodiik")
+          // TODO delete examples line :)
           await examples();
-          registerData(auth.currentUser)
+          let user = await registerData(auth.currentUser)
+          // user contains the user service details of the logged in user
         } else {
           setIdToken(null)
         }
