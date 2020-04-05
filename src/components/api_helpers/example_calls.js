@@ -12,6 +12,12 @@ import {
     getImageStringFromURL
 } from './cause';
 
+import {
+    createDonation,
+    getAllDonations,
+    getDonationById
+} from './donation';
+
 async function examples() {
 
     // UNCOMMENT THE CONSOLE LOGS IF YOU WANT TO SEE THEM
@@ -102,6 +108,29 @@ async function examples() {
         let imageString = await getImageStringFromURL(imageURL);
         console.log(imageString);
     }
+
+    if (false) {
+        const donationData = {
+            cause_id: "cause_id",
+            sender: "sender_uid",
+            receiver: "receiver_uid",
+            amount: 300
+        }
+        let id = await createDonation(donationData);
+        console.log(id);
+    }
+
+    if (false) {
+        let donations = await getAllDonations();
+        console.log(donations);
+    }
+
+    if (true) {
+        const donation_id = "k3fTr2EBHSRIeNVs1JSb";
+        let donation = await getDonationById(donation_id);
+        console.log(donation);
+    }
+
 
 
 }
