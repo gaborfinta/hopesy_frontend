@@ -40,7 +40,7 @@ export default function AllDonationsCard(props) {
               }
         />
         <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
-                   560.000 FT
+                   56200 FT
         </Typography>
     </Card>
   );

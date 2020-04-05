@@ -42,7 +42,7 @@ export default function ProfileCard(props) {
             <Grid item xs={6}>
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                        Levente Fodor
+                        {props.userData.name}
                     </Typography>
                     <Typography className={classes.pos} color="textSecondary">
                         Budapest
@@ -53,7 +53,7 @@ export default function ProfileCard(props) {
             <Grid item xs={6}>
             <Avatar 
                 alt="profile picture" 
-                src={props.userData.profilePictureUrl} 
+                src={props.userData.profile_pic} 
                 className={classes.large}/>
             </Grid>
             

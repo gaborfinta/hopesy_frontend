@@ -1,7 +1,7 @@
 import React from 'react';
 import RegisterAndLoginForm from '../components/forms/RegisterAndLoginForm';
 
-function WelcomePage() {
+function WelcomePage(props) {
 
   return (
     <div>
@@ -22,7 +22,7 @@ function WelcomePage() {
                 marginLeft: 'auto',
                 fontSize: '20px'
             }}>
-              <RegisterAndLoginForm />
+              <RegisterAndLoginForm setUser={props.setUser}/>
             </div>
         </header>  
       </section>

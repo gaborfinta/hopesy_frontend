@@ -40,7 +40,7 @@ export default function AllCharityEventsCard(props) {
               }
         />
         <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
-                   5
+                   13
         </Typography>
     </Card>
   );

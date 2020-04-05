@@ -31,12 +31,14 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function EventModal() {
+export default function EventModal(props) {
   const [open, setOpen] = React.useState(false);
   const [openTransfer, setOpenTransfer] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const classes = useStyles();
+
+  const cause = props.cause;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -111,13 +113,13 @@ export default function EventModal() {
         aria-labelledby="max-width-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          Bevásárlás
+          {cause.title}
         </DialogTitle>
         <DialogContent>
         <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
         <img 
-                src="https://d2h1pu99sxkfvn.cloudfront.net/b0/3498684/256965635_JEBHcinx8j/P0.jpg" 
+                src={cause.images[0]}
                 alt="invoice"
                 className={classes.images} />
         </Grid>
@@ -125,7 +127,7 @@ export default function EventModal() {
             <Typography component="h5" variant="h5">
                 Adományok jelenlegi állása
             </Typography>
-            <MoneyProgress current={60} total={100} />
+            <MoneyProgress current={cause.sum_collected} total={cause.sum_target} />
             <Typography component="h6" variant="h6">
                 <span
                   style={{
@@ -133,10 +135,10 @@ export default function EventModal() {
                     float: 'left'
                   }}
                 >
-                  345
+                  {cause.sum_collected}
                 </span>
                 <span style={{float: 'right'}}>
-                  a 2000 Ft-ból
+                  a {cause.sum_target} Ft-ból
                 </span>
             </Typography>
             <br />
@@ -154,13 +156,13 @@ export default function EventModal() {
                 Település
             </Typography>
             <Typography variant="body1" color="textSecondary" component="p">
-                Budapest
+                {cause.location}
             </Typography>
             <Typography component="h6" variant="h6">
                 Leírás
             </Typography>
             <Typography variant="body1" color="textSecondary" component="p">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+             {cause.description}
             </Typography>
             
         </Grid>

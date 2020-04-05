@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    maxHeight: 300
   },
   details: {
     display: 'flex',
@@ -32,9 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EventCard() {
+export default function EventCard(props) {
   const classes = useStyles();
-  
+  const cause = props.cause;
+
   return (
     <Card className={classes.root}>
       <Grid container spacing={3}>
@@ -42,11 +44,11 @@ export default function EventCard() {
             <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
-                Bevásárlás
+                {cause.title}
               </Typography>
               <Typography variant="subtitle1" color="primary">
                 <strong>
-                  2000 Ft
+                  {cause.sum_target} Ft
                 </strong>
               </Typography>
               </CardContent>
@@ -56,7 +58,7 @@ export default function EventCard() {
                 color="primary"
                 startIcon={<FacebookIcon />}
                 />
-              <EventModal />
+              <EventModal cause={cause}/>
               </div>
             </div>
           </Grid>
@@ -78,7 +80,7 @@ export default function EventCard() {
           
         </Grid>
         <Grid item xs={12}>
-          <MoneyProgress current={40} total={100} />
+          <MoneyProgress current={cause.sum_collected} total={cause.sum_target} />
         </Grid>
       </Grid>
     </Card>
