@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
@@ -10,6 +10,8 @@ import AllDonationsCard from './AllDonationsCard';
 import AllUsersCard from './AllUsersCard';
 import AllCharityEventCard from './AllCharityEventsCard';
 import Button from '@material-ui/core/Button';
+import UserContext from '../../contexts/UserContext';
+
 
 const useStyles = makeStyles({
   root: {
@@ -33,6 +35,7 @@ const useStyles = makeStyles({
 
 export default function WelcomeCard(props) {
   const classes = useStyles();
+  const userData = useContext(UserContext);
 
   return (
     <Card className={classes.root} raised variant="outlined">
@@ -40,7 +43,7 @@ export default function WelcomeCard(props) {
             <Grid container spacing={3}>
                 <Grid item xs={6}>
                     <Typography variant="h4" component="h2">
-                        <strong>Üdv újra itt Levente!</strong>
+                        <strong>Üdv újra itt {userData.name}!</strong>
                     </Typography>
                     <br />
                     <Typography variant="body2" component="p">

@@ -4,11 +4,10 @@ import EventCard from './EventCard';
 import Grid from '@material-ui/core/Grid';
 
 
-
 export default function EventCardContainer(props) {
    
     const causes = props.causes;
-    
+
      function generateEventCards(causes) {
         return(
             <Grid container spacing={3}>

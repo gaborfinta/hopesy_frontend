@@ -44,7 +44,7 @@ export default function AllUsersCard(props) {
               }
         />
         <Typography className={classes.moneySection} gutterBottom variant="h5" component="h2">
-                   911
+                   6
         </Typography>
     </Card>
   );
