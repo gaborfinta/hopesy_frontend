@@ -38,7 +38,7 @@ export default function ProfileAvatar(props) {
             }}>
                 <Avatar 
                   alt="Profile picture" 
-                  src={userData.profilePictureUrl} 
+                  src={userData.profile_pic} 
                   className={size}
                   />    
             </Badge>

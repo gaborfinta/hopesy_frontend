@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import EventCard from '../components/cards/EventCard';
 import CreateNewEventCard from '../components/cards/CreateNewEventCard';
 import WelcomeCard from '../components/cards/WelcomeCard';
+import PaymentAlert from '../components/alerts/PaymentAlert';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,7 +42,7 @@ export default function CharityEvents() {
                     <EventCard />
                 </Grid>
             </Grid>
-            
+            <PaymentAlert />
         </div>
     );
 };

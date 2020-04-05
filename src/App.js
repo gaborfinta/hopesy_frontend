@@ -53,7 +53,7 @@ function App() {
         </UserContext.Provider>
         </MuiThemeProvider>
         :
-        <WelcomePage />
+        <WelcomePage setUser={setUser}/>
       }
     </div>
       

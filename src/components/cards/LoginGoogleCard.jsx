@@ -7,7 +7,7 @@ import { registerUser, getUserById } from '../api_helpers/user';
 
 import examples from '../api_helpers/example_calls';
 
-export default function LoginGoogleCard() {
+export default function LoginGoogleCard(props) {
 
     const [idToken, setIdToken] = useState(null);
 
@@ -54,10 +54,9 @@ export default function LoginGoogleCard() {
   
         if (auth.currentUser) {
           setIdToken(await auth.currentUser.getIdToken())
-          // TODO delete examples line :)
-          await examples();
           let user = await registerData(auth.currentUser)
           // user contains the user service details of the logged in user
+          props.setUser(user)
         } else {
           setIdToken(null)
         }

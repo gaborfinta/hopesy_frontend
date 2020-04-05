@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function RegisterAndLoginForm() {
+export default function RegisterAndLoginForm(props) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const classes = useStyles();
@@ -91,7 +91,7 @@ export default function RegisterAndLoginForm() {
           Belépés Google fiókkal
         </DialogTitle>
         <DialogContent>
-          <LoginGoogleCard />
+          <LoginGoogleCard setUser={props.setUser}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
