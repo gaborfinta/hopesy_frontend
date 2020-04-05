@@ -21,7 +21,7 @@ async function createCause(causeFields) {
         sum_collected: 0,
         donations: [],
         closed: false
-    }
+    };
 
     let resp = await fetch(BASE_URL, {
         method: 'post',
