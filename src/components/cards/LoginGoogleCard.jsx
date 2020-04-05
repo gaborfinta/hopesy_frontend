@@ -5,8 +5,6 @@ import Button from '@material-ui/core/Button';
 
 import { registerUser, getUserById } from '../api_helpers/user';
 
-import examples from '../api_helpers/example_calls';
-
 export default function LoginGoogleCard(props) {
 
     const [idToken, setIdToken] = useState(null);
