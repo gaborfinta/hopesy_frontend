@@ -1,11 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
 import EventCard from '../components/cards/EventCard';
 import CreateNewEventCard from '../components/cards/CreateNewEventCard';
+
 import WelcomeCard from '../components/cards/WelcomeCard';
-import PaymentAlert from '../components/alerts/PaymentAlert';
+import CauseContext from '../contexts/CauseContext';
+import {
+    createCause,
+    getAllCauses,
+    getCauseById,
+    getImageStringFromURL
+} from '../components/api_helpers/cause';
+import EventCardContainer from '../components/cards/EventCardContainer';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
 export default function CharityEvents() {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(true);
+
+    const [causes, setCauses] = React.useState([]);
+
+    useEffect(async () => {
+        let allCauses = await getAllCauses();
+        setCauses(allCauses);
+    },[])
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -38,11 +54,10 @@ export default function CharityEvents() {
                 <Grid item xs={6} sm={3}>
                     <CreateNewEventCard />
                 </Grid>
-                <Grid item xs={6} sm={3}>
-                    <EventCard />
-                </Grid>
+                <CauseContext.Provider value={causes}>
+                    <EventCardContainer causes={causes}/>
+                </CauseContext.Provider>
             </Grid>
-            <PaymentAlert />
         </div>
     );
 };
